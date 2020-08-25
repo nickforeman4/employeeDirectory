@@ -1,7 +1,15 @@
 import React from "react";
-class Employeedata extends React.Component {
-    componentDidMount = () => {
+import axios from "axios";
 
+class Employeedata extends React.Component {
+    state = {
+        staff: []
+    }
+    componentDidMount = () => {
+    axios.get("https://randomuser.me/api/?results=200&nat=us"
+        ).then((response) => {
+            console.log(response)
+        })
     }
     render() {
         return (
